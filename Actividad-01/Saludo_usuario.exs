@@ -1,5 +1,5 @@
 defmodule SaludoUsuario do
-  
+
 # Saludar a un usuario dependiendo de la hora del día.
   def saludar do
     IO.puts("ingrese su nombre: ")

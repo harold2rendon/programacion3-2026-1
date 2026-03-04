@@ -1,5 +1,6 @@
 defmodule Tiquete do
 
+  # Calcular el total a pagar por un tiquete de avión, teniendo en cuenta el destino, si desea escoger silla, llevar maleta y contratar seguro.
   def main do
     destino = Util.leer_cadena("Ingrese su destino: ")
 
@@ -10,12 +11,13 @@ defmodule Tiquete do
     total(destino, silla, maleta, seguro)
 
   end
-
+# Tarifas para cada destino.
   def tarifa_base(:bogota), do: 80000
   def tarifa_base(:medellin), do: 90000
   def tarifa_base(:cartagena), do: 120000
   def tarifa_base(:san_andres), do: 200000
 
+# Calculo del total a pagar segun las opciones seleccionadas.
   def total(destino, silla, maleta, seguro) do
     tb = tarifa_base(destino)
     s = if silla ==1, do: 15000, else: 0
@@ -31,4 +33,5 @@ defmodule Tiquete do
     Util.imprimir("El total a pagar es: #{total}")
   end
 end
+
 Tiquete.main()

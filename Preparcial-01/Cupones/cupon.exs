@@ -1,5 +1,6 @@
 defmodule Cupon do
 
+# Validar un código de cupón, el cual debe tener al menos 10 caracteres, contener al menos una mayúscula, al menos un número y no debe contener espacios.
   def main do
     codigo_cupon =
       Util.leer_cadena("Ingrese el codigo del cupon: ")
@@ -11,45 +12,62 @@ defmodule Cupon do
       |> validar_digitos(codigo_cupon)
       |> validar_espacios(codigo_cupon)
 
-    resultado =
-      case validaciones do
-        [] ->
-          "Cupon valido"
-        _ ->
-          "El código del cupón no cumple con los requisitos: #{Enum.join(validaciones, ", ")}"
-        end
-        IO.puts(resultado)
-      end
+    resultado(validaciones)
+    |> mostrar()
 
-      def validar_longitud(lista, codigo_cupon) do
-        if String.length(codigo_cupon) >=10 do
-          lista
-        else
-          lista ++ ["El código del cupón debe tener al menos 10 caracteres"]
-        end
-      end
+  end
 
-      def validar_mayuscula(lista, codigo_cupon) do
-        if String.match?(codigo_cupon, ~r/[A-Z]/) do
-        lista
-      else
-        lista ++ ["El código del cupón debe contener al menos una letra mayúscula"]
-      end
-    end
-    def validar_digitos(lista, codigo_cupon) do
-      if String.match?(codigo_cupon, ~r/[0-9]/) do
-        lista
-      else
-        lista ++ ["El código del cupón debe contener al menos un dígito"]
-      end
-    end
-    def validar_espacios(lista, codigo_cupon) do
-      if String.contains?(codigo_cupon, " ") do
-        lista ++ ["El código del cupón no debe contener espacios"]
-      else
-        lista
-      end
+# Función para mostrar el resultado de la validación.
+  def resultado([]),
+    do: {:ok, "Cupón válido"}
+
+  def resultado(lista),
+    do: {:error, Enum.join(lista, " y ")}
+
+
+  def mostrar({:ok, mensaje}),
+    do: IO.puts(mensaje)
+
+  def mostrar({:error, mensaje}),
+    do: IO.puts(mensaje)
+
+# Funciones de validación para cada criterio del código de cupón.
+  def validar_longitud(lista, codigo) do
+    if String.length(codigo) >= 10 do
+      lista
+    else
+      lista ++ ["Debe tener al menos 10 caracteres"]
     end
   end
+
+
+  def validar_mayuscula(lista, codigo) do
+    if codigo != String.downcase(codigo) do
+      lista
+    else
+      lista ++ ["Debe contener al menos una mayúscula"]
+    end
+  end
+
+
+  def validar_digitos(lista, codigo) do
+    sin_numeros = String.replace(codigo, ~r/[0-9]/, "")
+
+    if sin_numeros != codigo do
+      lista
+    else
+      lista ++ ["Debe contener al menos un número"]
+    end
+  end
+
+
+  def validar_espacios(lista, codigo) do
+    if String.contains?(codigo, " ") do
+      lista ++ ["No debe contener espacios"]
+    else
+      lista
+    end
+  end
+end
 
 Cupon.main()
