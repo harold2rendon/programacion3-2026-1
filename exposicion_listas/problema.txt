@@ -1,0 +1,9 @@
+Programa que gestiona las citas de un taller mecánico, 
+en el cual se pide que se pueda registrar y administras las citas
+de los clientes.
+
+Cada cita recolecta la sigiiente información:
+ID, nombre del cliente, Vehiculo, tipo de servicio, fecha y hora de la cita.
+
+El Programa permite:
+Agendar, ver, buscar, actualizar y eliminar citas.
