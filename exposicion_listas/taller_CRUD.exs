@@ -67,13 +67,31 @@ defmodule Taller do
       true ->
       id = String.to_integer(id_)
       cliente = Util.leer_cadena("Ingrese el nombre del cliente: ")
-      vehiculo = Util.leer_cadena("Ingrese el vehículo: ")
+      vehiculo = Util.leer_cadena("Ingrese datos del vehículo: ")
       fecha = Util.leer_cadena("Ingrese la fecha de la cita (YYYY-MM-DD): ")
       hora = Util.leer_cadena("Ingrese la hora de la cita (HH:MM): ")
       servicio = Util.leer_cadena("Ingrese el servicio requerido: ")
 
-      nueva_cita = %{id: id, cliente: cliente, vehiculo: vehiculo, fecha: fecha, hora: hora, servicio: servicio}
-      {:ok,  citas ++ [nueva_cita]}
+       conflicto =
+        Enum.any?(citas, fn cita ->
+          cita.fecha == fecha and cita.hora == hora
+        end)
+
+      if conflicto do
+        IO.puts("Error: Ya existe una cita agendada en esa fecha y hora.")
+        {:ok, citas}
+      else
+        nueva_cita = %{
+          id: id,
+          cliente: cliente,
+          vehiculo: vehiculo,
+          fecha: fecha,
+          hora: hora,
+          servicio: servicio
+        }
+
+        {:ok, citas ++ [nueva_cita]}
+      end
     end
   end
 
