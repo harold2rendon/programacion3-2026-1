@@ -1,0 +1,189 @@
+"defmodule SumaDyV do
+  def suma([]), do: 0
+  def suma([x]), do: x
+
+  def suma(lista) do
+    mitad = div(length(lista), 2)
+    {izq, der} = Enum.split(lista, mitad)
+    suma(izq) + suma(der)
+  end
+end
+
+IO.inspect(SumaDyV.suma([1, 2, 3, 4]))
+# Debería imprimir 10",,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,"
+sumar([1])
+return 1",,"
+sumar([2])
+2",,,,"
+sumar([3])
+3
+",,"
+sumar([4])
+
+",,,
+,,,,"
+sumar([1,2])
+izq = [1]
+der = [2]
+sumar(izq ) + sumar(der)","
+sumar([1,2])
+izq = [1]
+der = [2]
+1 + sumar(der)","
+sumar([1,2])
+izq = [1]
+der = [2]
+1 + sumar(der)","
+sumar([1,2])
+izq = [1]
+der = [2]
+1 + 2","
+sumar([1,2])
+izq = [1]
+der = [2]
+1+ 2 = 3",,"
+sumar([3,4])
+izq = [3]
+der = [4]
+sumar(izq ) + sumar(der)
+","
+sumar([3,4])
+izq = [3]
+der = [4]
+sumar(izq ) + sumar(der)
+","
+sumar([3,4])
+izq = [3]
+der = [4]
+3 + sumar(der)
+","
+sumar([3,4])
+izq = [3]
+der = [4]
+3 + 4
+","
+sumar([3,4])
+izq = [3]
+der = [4]
+3 + 4 = 7
+",,
+,,,"
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+sumar(izq ) + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+sumar(izq ) + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+sumar(izq ) + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+sumar(izq ) + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+sumar(izq ) + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+sumar(izq ) + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+3 + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+3 + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+3 + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+3 + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+3 + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+3 + sumar(der)","
+sumar([1,2,3,4])
+izq = [1,2]
+der = [3,4]
+3 + 7",
+,,"main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+sumar(lista)
+","main
+lista = [1,2,3,4]
+10"
