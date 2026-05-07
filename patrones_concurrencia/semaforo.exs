@@ -21,7 +21,7 @@ defmodule Semaforo do
   defp loop(max, ocupadas, cola) do
     receive do
 
-      # si hay cajero, entra uno
+      # si hay cajero libre, entra uno
       {:adquirir, from} when ocupadas < max ->
         send(from, :ok)
         loop(max, ocupadas + 1, cola)
