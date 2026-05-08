@@ -29,7 +29,7 @@ def activar_servicio() do
   receive do
     {productor, :fin} -> send(productor, :fin)
 
-    {productor,{:mayusculas, mensaje}} ->
+    {productor,{:mayusculas, mensaje}} -> 
       send(productor, String.upcase(mensaje))
       activar_servicio()
 
